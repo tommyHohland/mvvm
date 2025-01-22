@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
 using MVVM.Data;
 using MVVM.Models;
 
@@ -65,6 +66,10 @@ namespace MVVM.Services
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
         }
-           
+        public async Task<List<Employee>> GetAllEmployeesAsync()
+        {
+            return await _context.Employees.ToListAsync();
+        }
+
     }
 }
