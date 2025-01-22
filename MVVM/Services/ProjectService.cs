@@ -53,10 +53,13 @@ namespace MVVM.Services
             }
         }
 
-        public IQueryable<T> GetOrderedEntitiesQuery<T, TKey>(Func<T, TKey> keySelector) where T : class
+        public Task<List<T>> GetOrderedEntitiesQuery<T, TKey>(Func<T, TKey> keySelector) where T : class
         {
-            return (IQueryable<T>)_dbContext.Set<T>().OrderBy(keySelector);
+            return Task.FromResult(_dbContext.Set<T>().OrderBy(keySelector).ToList());
         }
+
+
+
         public async Task AddEmployeeToProjectAsync(int projectId, int employeeId)
         {
             var project = await _dbContext.Projects.Include(p => p.TeamsOfWorkers).FirstOrDefaultAsync(p => p.ID == projectId);

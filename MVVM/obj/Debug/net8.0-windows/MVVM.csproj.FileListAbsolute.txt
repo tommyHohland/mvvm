@@ -48,11 +48,9 @@ C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\runtimes\win-x86\
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MVVM.csproj.AssemblyReference.cache
-C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MVVM_MarkupCompile.cache
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MVVM_MarkupCompile.lref
-C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MVVM.g.resources
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MVVM.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\MVVM.AssemblyInfoInputs.cache
@@ -147,3 +145,7 @@ C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\tr\Microsoft.Code
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\MainWindow.g.cs
+C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\ProjectView.g.cs
+C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\MainWindow.baml
+C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\ProjectView.baml
