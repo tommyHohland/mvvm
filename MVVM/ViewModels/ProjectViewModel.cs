@@ -144,11 +144,7 @@ namespace MVVM.ViewModels
         {
             if (SelectedProject != null)
             {
-                if (SelectedProject.DateEnd < SelectedProject.DateStart)
-                {
-                    MessageBox.Show("Date end can't be less than date start", "Invalid Date end", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
+                _projectService.isValidData(SelectedProject);
 
                 if (SelectedProject.Manager.ID != SelectedProject.ID_Manager)
                 {
