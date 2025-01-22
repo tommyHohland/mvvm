@@ -58,7 +58,14 @@ namespace MVVM.Services
             return Task.FromResult(_dbContext.Set<T>().OrderBy(keySelector).ToList());
         }
 
-
+        public async Task AddProject(Project project)
+        {
+            if (isValidData(project))
+            {
+                _dbContext.Projects.Add(project);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
 
         public async Task AddEmployeeToProjectAsync(int projectId, int employeeId)
         {
@@ -157,6 +164,23 @@ namespace MVVM.Services
                     return !string.IsNullOrEmpty(propertyValue) && propertyValue.Contains(searchText, StringComparison.InvariantCultureIgnoreCase);
                 };
             }
+        }
+
+        public bool isValidData(Project project)
+        {
+            if (string.IsNullOrEmpty(project.Title))
+                throw new ArgumentException("Title is null or empty");
+
+            if (project.DateEnd < project.DateStart)
+                throw new ArgumentException("DateStart cant be less than DateEnd");
+
+            if (project.Priority < 0 || project.Priority > 10)
+                throw new ArgumentException(nameof(project.Priority), "Priority must be between 0 and 10.");
+
+            if (project.ID_executor == null)
+                throw new ArgumentException(nameof(project.Priority), "The performing company has not been determined");
+
+            return true;
         }
     }
 }
