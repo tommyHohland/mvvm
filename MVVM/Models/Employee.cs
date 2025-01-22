@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MVVM.Models
 {
-    internal class Employee
+    public  class Employee
     {
         [Key]
         public int ID { get; set; }

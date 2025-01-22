@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MVVM.Models
 {
-    internal class TeamOfWorker
+    public  class TeamOfWorker
     {
         [Key]
         public int ID { get; set; }

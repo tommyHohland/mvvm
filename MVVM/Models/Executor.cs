@@ -2,7 +2,7 @@
 
 namespace MVVM.Models
 {
-    internal class Executor
+    public  class Executor
     {
         [Key]
         public int ID { get; set; }

@@ -146,3 +146,4 @@ C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\ru\Microsoft.Code
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\podar\source\repos\MVVM\MVVM\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.InMemory.dll
