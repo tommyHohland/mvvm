@@ -4,6 +4,7 @@ using MVVM.Services;
 using System.Windows.Input;
 using System.Windows;
 using Microsoft.EntityFrameworkCore;
+using MVVM.Views;
 
 namespace MVVM.ViewModels
 {
@@ -30,7 +31,7 @@ namespace MVVM.ViewModels
         public ICommand LoadProjectsCommand { get; }
         public ICommand SaveProjectCommand { get; }
         public ICommand DeleteProjectCommand { get; }
-        public ICommand OpenVizardCommand { get; }
+        public ICommand OpenWizardCommand { get; }
         public ICommand AddEmployeeToProjectCommand { get; }
         public ICommand RemoveEmployeeFromProjectCommand { get; }
         public ICommand ApplyFiltersCommand { get; }
@@ -45,7 +46,7 @@ namespace MVVM.ViewModels
             LoadProjectsCommand = new RelayCommand(async () => await LoadProjectsAsync());
             SaveProjectCommand = new RelayCommand(async () => await SaveProjectAsync(), CanSaveProject);
             DeleteProjectCommand = new RelayCommand(async () => await DeleteProjectAsync(), CanDeleteProject);
-            OpenVizardCommand = new RelayCommand(OpenWizard);
+            OpenWizardCommand = new RelayCommand(OpenWizard);
             AddEmployeeToProjectCommand = new RelayCommand(AddEmployeeToProject);
             RemoveEmployeeFromProjectCommand = new RelayCommand(RemoveEmployeeFromProject, CanRemoveEmployee);
             ApplyDatesFilterCommand = new RelayCommand(ApplyDatesFilter);
@@ -251,11 +252,8 @@ namespace MVVM.ViewModels
 
         private void OpenWizard()
         {
-            //Realize 4-steps Wizard // valid data from ui to service 
-            /*
             var wizard = new Wizard();
             wizard.ShowDialog();
-            */
         }
 
         private void ApplyDatesFilter()

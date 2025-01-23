@@ -5,28 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Projects management system"  Width="1350" Height="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <DataGrid ItemsSource="{Binding Employees}" 
-                  SelectedItem="{Binding SelectedEmployee}" 
-                  AutoGenerateColumns="False" 
-                  CanUserAddRows="True" 
-                  CanUserDeleteRows="False" 
-                  SelectionMode="Single" 
-                  Margin="10">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
-            </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button Content="Save All Changes" Command="{Binding SaveChangesCommand}" Margin="5" />
-            <Button Content="Delete Selected" Command="{Binding DeleteEmployeeCommand}" Margin="5" />
-        </StackPanel>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <MenuItem Header="Pages">
+                <MenuItem Header="Employee Page" Command="{Binding OpenEmployeePageCommand}" />
+                <MenuItem Header="Project Page" Command="{Binding OpenProjectPageCommand}" />
+            </MenuItem>
+        </Menu>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" Margin="0,30,0,0" Width="1280" Height="720"/>
     </Grid>
 </Window>

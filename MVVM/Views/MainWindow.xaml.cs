@@ -7,11 +7,11 @@ namespace MVVM
 {
     public partial class MainWindow : Window
     {
-        private readonly EmployeeViewModel _viewModel;
+        private readonly NavigationViewModel _viewModel;
         public MainWindow()
         {
             InitializeComponent();
-            _viewModel = new EmployeeViewModel(new EmployeeService(new Context()));
+            _viewModel = new NavigationViewModel(MainFrame);
             DataContext = _viewModel;
         }
     }

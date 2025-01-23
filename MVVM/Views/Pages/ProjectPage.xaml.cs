@@ -1,15 +1,15 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
 using MVVM.Data;
 using MVVM.Services;
 using MVVM.ViewModels;
 
-namespace MVVM.Views
+namespace MVVM.Views.Pages
 {
-
-    public partial class ProjectView : Window
+   
+    public partial class ProjectPage : Page
     {
-        private ProjectViewModel _viewModel;
-        public ProjectView()
+        private readonly ProjectViewModel _viewModel;
+        public ProjectPage()
         {
             InitializeComponent();
             _viewModel = new ProjectViewModel(new ProjectService(new Context()));

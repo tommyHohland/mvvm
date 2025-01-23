@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\podar\source\repos\MVVM\MVVM\App.xaml
-3999735372
+4-121115695
 
-24-1892375386
+26-2025287208
 229-1769433118
-Views\MainWindow.xaml;Views\ProjectView.xaml;Views\Wizard.xaml;
+Views\MainWindow.xaml;Views\Pages\EmployeePage.xaml;Views\Pages\ProjectPage.xaml;Views\Wizard.xaml;
 
 True
 
