@@ -114,7 +114,7 @@ namespace MVVM.ViewModels
                 {
                     _textForSearchCustomer = value;
                     OnPropertyChanged(nameof(TextForSearchCustomer));
-                    _projectService.FilterCollection(Customers, _textForSearchCustomer, customer => customer.CompanyName);
+                    FilterCollection(Customers, _textForSearchCustomer, customer => customer.CompanyName);
                 }
             }
         }
@@ -128,7 +128,7 @@ namespace MVVM.ViewModels
                 {
                     _textForSearchExecutor = value;
                     OnPropertyChanged(nameof(TextForSearchExecutor));
-                    _projectService.FilterCollection(Executors, _textForSearchExecutor, executor => executor.CompanyName);
+                    FilterCollection(Executors, _textForSearchExecutor, executor => executor.CompanyName);
                 }
             }
         }
@@ -142,7 +142,7 @@ namespace MVVM.ViewModels
                 {
                     _textForSearchManager = value;
                     OnPropertyChanged(nameof(TextForSearchManager));
-                    _projectService.FilterCollection(Employees, _textForSearchManager, manager => manager.FullName);
+                    FilterCollection(Employees, _textForSearchManager, manager => manager.FullName);
                 }
             }
         }
@@ -434,6 +434,23 @@ namespace MVVM.ViewModels
             var executors = await _projectService.GetOrderedEntitiesQuery<Executor, string>(c => c.CompanyName);
             foreach (var executor in executors)
                 Executors.Add(executor);
+        }
+
+        private void FilterCollection<T>(IEnumerable<T> collection, string searchText, Func<T, string> propertySelector)
+        {
+            if (string.IsNullOrEmpty(searchText))
+            {
+                CollectionViewSource.GetDefaultView(collection).Filter = null;
+            }
+            else
+            {
+                CollectionViewSource.GetDefaultView(collection).Filter = item =>
+                {
+                    var typedItem = (T)item;
+                    var propertyValue = propertySelector(typedItem);
+                    return !string.IsNullOrEmpty(propertyValue) && propertyValue.Contains(searchText, StringComparison.InvariantCultureIgnoreCase);
+                };
+            }
         }
         #endregion
 

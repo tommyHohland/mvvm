@@ -148,24 +148,6 @@ namespace MVVM.Services
                 await _dbContext.SaveChangesAsync();
             }
         }
-
-        public void FilterCollection<T>(IEnumerable<T> collection, string searchText, Func<T, string> propertySelector)
-        {
-            if (string.IsNullOrEmpty(searchText))
-            {
-                CollectionViewSource.GetDefaultView(collection).Filter = null;
-            }
-            else
-            {
-                CollectionViewSource.GetDefaultView(collection).Filter = item =>
-                {
-                    var typedItem = (T)item;
-                    var propertyValue = propertySelector(typedItem);
-                    return !string.IsNullOrEmpty(propertyValue) && propertyValue.Contains(searchText, StringComparison.InvariantCultureIgnoreCase);
-                };
-            }
-        }
-
         public bool isValidData(Project project)
         {
             if (string.IsNullOrEmpty(project.Title))
