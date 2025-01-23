@@ -58,7 +58,7 @@ namespace MVVM.Services
             return Task.FromResult(_dbContext.Set<T>().OrderBy(keySelector).ToList());
         }
 
-        public async Task AddProject(Project project)
+        public async Task AddProjectAsync(Project project)
         {
             if (isValidData(project))
             {

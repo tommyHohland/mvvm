@@ -142,36 +142,44 @@ namespace MVVM.ViewModels
 
         private async Task SaveProjectAsync()
         {
-            if (SelectedProject != null)
+            try
             {
-                _projectService.isValidData(SelectedProject);
-
-                if (SelectedProject.Manager.ID != SelectedProject.ID_Manager)
+                if (SelectedProject != null)
                 {
-                    MessageBoxResult result = MessageBox.Show("Remove the previous manager from a team?", "Remove Manager", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    _projectService.isValidData(SelectedProject);
 
-                    if (result == MessageBoxResult.Yes)
+                    if (SelectedProject.Manager.ID != SelectedProject.ID_Manager)
                     {
-                        SetProjectReferences();
-                        await _projectService.RemoteManagerFromProject(SelectedProject.ID, _previousManagerId, SelectedProject.Manager?.ID ?? 0);
-                        var updatedProject = await _projectService.GetProjectByIdAsync(SelectedProject.ID);
-                        UpdateProjectInList(updatedProject);
+                        MessageBoxResult result = MessageBox.Show("Remove the previous manager from a team?", "Remove Manager", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            SetProjectReferences();
+                            await _projectService.RemoteManagerFromProject(SelectedProject.ID, _previousManagerId, SelectedProject.Manager?.ID ?? 0);
+                            var updatedProject = await _projectService.GetProjectByIdAsync(SelectedProject.ID);
+                            UpdateProjectInList(updatedProject);
+                        }
+                        else
+                        {
+                            SetProjectReferences();
+                            await _projectService.ChangeManagerOnProject(SelectedProject.ID, _previousManagerId, SelectedProject.Manager?.ID ?? 0);
+                            var updatedProject = await _projectService.GetProjectByIdAsync(SelectedProject.ID);
+                            UpdateProjectInList(updatedProject);
+                        }
                     }
                     else
                     {
                         SetProjectReferences();
-                        await _projectService.ChangeManagerOnProject(SelectedProject.ID, _previousManagerId, SelectedProject.Manager?.ID ?? 0);
                         var updatedProject = await _projectService.GetProjectByIdAsync(SelectedProject.ID);
                         UpdateProjectInList(updatedProject);
                     }
                 }
-                else
-                {
-                    SetProjectReferences();
-                    var updatedProject = await _projectService.GetProjectByIdAsync(SelectedProject.ID);
-                    UpdateProjectInList(updatedProject);
-                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}","Invalid intput data", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
 
         private void SetProjectReferences()

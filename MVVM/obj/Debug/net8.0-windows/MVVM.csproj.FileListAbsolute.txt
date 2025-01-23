@@ -149,3 +149,5 @@ C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\MainWindow.
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\ProjectView.g.cs
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\MainWindow.baml
 C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\ProjectView.baml
+C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\Wizard.g.cs
+C:\Users\podar\source\repos\MVVM\MVVM\obj\Debug\net8.0-windows\Views\Wizard.baml
